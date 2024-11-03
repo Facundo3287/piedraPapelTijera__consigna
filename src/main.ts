@@ -1,1 +1,1 @@
-console.log('m');
+console.log(window.location.href, window.location.pathname);
