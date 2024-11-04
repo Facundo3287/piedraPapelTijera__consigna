@@ -1,0 +1,19 @@
+* {
+    overflow: hidden }
+
+body {
+    margin: 0px;
+    background-image: url(../assets/fondo.png);
+    background-position: center;
+    background-size: auto }
+
+.app {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center }
+
+.buttom {
+    margin-top: 30px;
+    margin-bottom: 50px }

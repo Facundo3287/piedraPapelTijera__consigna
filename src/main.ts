@@ -1,7 +1,15 @@
-import { router } from "./router";
+import './style.css';
+import '../assets/fondo.png';
+import { router } from "./router.js";
+import { agregarComponenteTitulo } from './componenetes/titulo.js';
+import { agregarComponenteButtom} from './componenetes/buttom.js';
+import { agregarComponentManos } from './componenetes/manos.js';
 
 function main () {
-    router(document.getElementById('app')! , window.location.pathname)
+    agregarComponenteTitulo();
+    agregarComponenteButtom();
+    agregarComponentManos();
+    router(window.location.pathname)
 };
 
 main()
