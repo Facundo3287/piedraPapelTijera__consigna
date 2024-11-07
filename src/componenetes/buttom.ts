@@ -13,7 +13,6 @@ export function agregarComponenteButtom () {
             buttom.textContent = this.textContent;
             buttom.setAttribute('class', 'buttom');
             buttom.addEventListener('click', (e: any) => {  
-                console.log('eveto');
                 if (e.target.textContent == 'Empezar') {
                     document.getElementById('app')!.innerHTML = `
                     <mi-titulo type = 'B'> </mi-titulo>
@@ -24,7 +23,6 @@ export function agregarComponenteButtom () {
                     <mi-contador> </mi-contador>
                     <mis-manos modo = 'true'> </mis-manos>` }
                 else {
-                    console.log('3');
                     router('/piedraPapelTijera__consigna/') }
             });
 
