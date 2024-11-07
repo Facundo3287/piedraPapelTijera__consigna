@@ -1,4 +1,5 @@
 import { state } from "../state";
+import { router } from "../router";
 
 export function agregarComponenteContador () {
     class MiContador extends HTMLElement {
@@ -49,6 +50,8 @@ export function agregarComponenteContador () {
             if (objeto.jugadaUsuario == 'piedra' && objeto.jugadaMaquina == 'piedra') {
                 dataVieja.resultadoPartida = 'Enpate';
                 document.querySelector('.app')!.innerHTML = `<mi-duelo src1 = 'piedra' src2 = 'piedra'> </mi-duelo>` }
+            else if (objeto.jugadaUsuario == null) {
+                router('/piedraPapelTijera__consigna/') }
             else if (objeto.jugadaUsuario == 'piedra' && objeto.jugadaMaquina == 'papel') {
                 dataVieja.resultadoPartida = 'Perdiste';
                 dataVieja.victoriasMaquina = dataVieja.victoriasMaquina + 1;
@@ -79,6 +82,7 @@ export function agregarComponenteContador () {
             else if (objeto.jugadaUsuario == 'tijera' && objeto.jugadaMaquina == 'tijera') {
                 dataVieja.resultadoPartida = 'Enpate';
                 document.querySelector('.app')!.innerHTML = `<mi-duelo src1 = 'tijera' src2 = 'tijera'> </mi-duelo>` };
+            dataVieja.jugadaActualUsuario = null;
             state.setState(dataVieja) };
 
       

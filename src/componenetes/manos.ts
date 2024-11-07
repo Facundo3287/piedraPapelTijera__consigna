@@ -53,6 +53,7 @@ export function agregarComponentManos () {
         animacion(imgPiedra: HTMLElement, imgPapel: HTMLElement, imgTijera: HTMLElement) {
             state.data.jugadaActualMaquina = random();
             function aux (e: any) { 
+                console.log(e.target.src);
                 if (e.target.src.includes('piedra.png') == true) {
                     state.data.jugadaActualUsuario = 'piedra';
                     imgPiedra.style.top = '-10px';
