@@ -1,3 +1,5 @@
+import { router } from "../router";
+
 export function agregarComponenteButtom () {
     class MiButtom extends HTMLElement {
         shadow: ShadowRoot;
@@ -11,12 +13,19 @@ export function agregarComponenteButtom () {
             buttom.textContent = this.textContent;
             buttom.setAttribute('class', 'buttom');
             buttom.addEventListener('click', (e: any) => {  
+                console.log('eveto');
                 if (e.target.textContent == 'Empezar') {
                     document.getElementById('app')!.innerHTML = `
                     <mi-titulo type = 'B'> </mi-titulo>
                     <mi-buttom class = 'buttom'>Jugar</mi-buttom>
-                    <mis-manos> </mis-manos>` }
-                else if (e.target.textContent == 'Jugar') console.log('sexo')
+                    <mis-manos modo = 'false'> </mis-manos>` }
+                else if (e.target.textContent == 'Jugar') {
+                    document.getElementById('app')!.innerHTML = `
+                    <mi-contador> </mi-contador>
+                    <mis-manos modo = 'true'> </mis-manos>` }
+                else {
+                    console.log('3');
+                    router('/piedraPapelTijera__consigna/') }
             });
 
             let style: HTMLElement = document.createElement('style');

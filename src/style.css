@@ -8,7 +8,8 @@ body {
     background-size: auto }
 
 .app {
-    margin-top: 80px;
+    padding-top: 80px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
