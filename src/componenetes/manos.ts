@@ -19,11 +19,14 @@ export function agregarComponentManos () {
             let imgPapel: HTMLElement = document.createElement('img');
             let imgTijera: HTMLElement = document.createElement('img');
             div.setAttribute('class', 'div');
-            imgPiedra.setAttribute('class', 'mano piedra');
+            imgPiedra.setAttribute('class', 'mano');
+            imgPiedra.setAttribute('id', 'piedra');
             imgPiedra.setAttribute('src', piedra);
-            imgPapel.setAttribute('class', 'mano papel');
+            imgPapel.setAttribute('class', 'mano');
+            imgPapel.setAttribute('id', 'papel');
             imgPapel.setAttribute('src', papel);
-            imgTijera.setAttribute('class', 'mano tijera');
+            imgTijera.setAttribute('class', 'mano');
+            imgTijera.setAttribute('id', 'tijera');
             imgTijera.setAttribute('src', tijera);
             let style: HTMLElement = document.createElement('style');
             style.innerHTML = `
@@ -53,18 +56,17 @@ export function agregarComponentManos () {
         animacion(imgPiedra: HTMLElement, imgPapel: HTMLElement, imgTijera: HTMLElement) {
             state.data.jugadaActualMaquina = random();
             function aux (e: any) { 
-                console.log(e.target.src);
-                if (e.target.src.includes('piedra.png') == true) {
+                if (e.target.id == 'piedra') {
                     state.data.jugadaActualUsuario = 'piedra';
                     imgPiedra.style.top = '-10px';
                     imgPapel.style.top = '10px';
                     imgTijera.style.top = '10px' }
-                else if (e.target.src.includes('papel.png') == true) {
+                else if (e.target.id == 'papel') {
                     state.data.jugadaActualUsuario = 'papel';
                     imgPiedra.style.top = '10px';
                     imgPapel.style.top = '-10px';
                     imgTijera.style.top = '10px'}
-                else if (e.target.src.includes('tijera.png') == true) {
+                else if (e.target.id == 'tijera') {
                     state.data.jugadaActualUsuario = 'tijera';
                     imgPiedra.style.top = '10px';
                     imgPapel.style.top = '10px';
